@@ -17,4 +17,5 @@ urlpatterns = [
     path("", include(router.urls)),
     path("plans", include('plans.api.v1.urls')),
     path('apps/', include('user_apps.api.v1.urls')),
+    path('subscriptions/', include('subscriptions.api.v1.urls')),
 ]

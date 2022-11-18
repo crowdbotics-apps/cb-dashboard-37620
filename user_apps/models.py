@@ -4,9 +4,6 @@ from users.models import User
 
 APP_TYPE = [('Web', 'Web'), ('Mobile', 'Mobile')]
 APP_FRAMEWORK = [('Django', 'Django'), ('React Native', 'React Native')]
-# class AppFramework(Enum):
-#     DJANGO = 'Django'
-#     REACT_NATIVE = 'React Native'
 
 # Create your models here.
 class UserApp(models.Model):
@@ -22,6 +19,6 @@ class UserApp(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    
-
+    def __str__(self):
+        return self.name + ' : ' + (self.domain_name or "")
 
