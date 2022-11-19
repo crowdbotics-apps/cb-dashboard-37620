@@ -3,6 +3,7 @@ from user_apps.models import UserApp
 from plans.models import Plan
 from users.models import User
 
+
 # Create your models here.
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

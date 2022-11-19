@@ -8,10 +8,8 @@ from home.api.v1.viewsets import (
 
 router = DefaultRouter()
 
-router.register("signup", SignupViewSet, basename="signup")
+router.register("signup", SignupViewSet, basename="signup", )
 router.register("login", LoginViewSet, basename="login")
-
-
 
 urlpatterns = [
     path("", include(router.urls)),

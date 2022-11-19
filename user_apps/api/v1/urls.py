@@ -7,5 +7,3 @@ urlpatterns = [
     path('', views.UserAppList.as_view()),
     path('<int:pk>/', views.UserAppDetail.as_view()),
 ]
-
-urlpatterns
