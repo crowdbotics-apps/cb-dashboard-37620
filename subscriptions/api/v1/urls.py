@@ -7,5 +7,3 @@ urlpatterns = [
     path('', views.SubscriptionListView.as_view()),
     path('<int:pk>/', views.SubscriptionDetail.as_view()),
 ]
-
-urlpatterns
