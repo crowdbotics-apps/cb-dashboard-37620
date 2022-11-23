@@ -73,10 +73,10 @@ class SubscriptionDetail(APIView):
         current_user = self.request.user
         subscription = self.get_object(pk)
         serializer = SubscriptionSerializer(subscription, data=request.data)
-        target_app = serializer.validated_data.get('app')
 
         if serializer.is_valid():
             # Validate if the current user is the owner of the app.
+            target_app = serializer.validated_data.get('app')
             if target_app.user != current_user:
                 raise ValidationError("Must be the owner of the app")
 
