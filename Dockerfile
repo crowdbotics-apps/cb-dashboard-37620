@@ -25,6 +25,5 @@ ENV PATH="/.venv/bin:$PATH"
 COPY --chown=django:django . .
 
 # Collect static files and serve app
-RUN python3 manage.py createinitialplans 
 RUN python3 manage.py collectstatic --no-input
 CMD waitress-serve --port=$PORT cb_dashboard_37620.wsgi:application
