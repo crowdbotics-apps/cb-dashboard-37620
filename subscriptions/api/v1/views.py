@@ -40,7 +40,7 @@ class SubscriptionListView(APIView):
                 raise ValidationError(
                     'This app already has a subscription associated with it, please make that inactive and try again')
 
-            serializer.save(user=self.request.current_user)
+            serializer.save(user=current_user)
             return Response(serializer.data, status=http_status.HTTP_201_CREATED)
         return Response(serializer.errors, status=http_status.HTTP_400_BAD_REQUEST)
 
